@@ -1,3 +1,6 @@
 pandas
 requests
 schedule
+yfinance
+pytz
+
