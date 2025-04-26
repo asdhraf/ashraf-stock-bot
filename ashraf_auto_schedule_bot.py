@@ -32,13 +32,13 @@ def analyze_stock(symbol, now):
             stop_loss = round(last_close * 0.93, 2)
             target1 = round(last_close * 1.07, 2)
             target2 = round(last_close * 1.15, 2)
-            message = f\"""📈 <b>فرصة ممتازة: {symbol}</b>
+            message = f"""📈 <b>فرصة ممتازة: {symbol}</b>
 ⏰ وقت الدخول: {now}
 💵 سعر الدخول: {last_close:.2f}
 🛑 وقف الخسارة: {stop_loss}
 🎯 الهدف الأول: {target1}
 🎯 الهدف الثاني: {target2}
-📌 القرار: دخول\""\""
+📌 القرار: دخول"""
             return message
     except Exception as e:
         return None
@@ -67,3 +67,4 @@ def schedule_runner():
 
 if __name__ == '__main__':
     schedule_runner()
+
