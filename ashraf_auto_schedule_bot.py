@@ -1,4 +1,6 @@
-import yfinance as yf
+
+
+    import yfinance as yf
 import requests
 import datetime
 import pytz
@@ -93,7 +95,6 @@ def calculate_macd_signal(close_prices):
 
 # التحقق من الأخبار الإيجابية (مبسط)
 def check_news_sentiment(symbol):
-    # اختصار شديد لتحسين السرعة
     return True
 
 # فحص شامل لكل الأسهم
@@ -112,17 +113,19 @@ def run_analysis():
 def send_alive_message():
     while True:
         send_to_telegram("✅ البوت شغال بشكل طبيعي!")
-        time.sleep(60 * 60 * 12)  # كل 12 ساعة
+        time.sleep(60 * 60 * 12)
 
 # الحلقة الرئيسية
 def main():
     while True:
         now = datetime.datetime.now(pytz.timezone('US/Eastern'))
         run_analysis()
-        time.sleep(300)  # كل 5 دقائق
+        time.sleep(300)
 
 # تشغيل السكربت
 if __name__ == "__main__":
+    send_to_telegram("🚀 اختبار: البوت يرسل الرسائل بنجاح ✅")  # 🧪 اختبار مؤقت
     threading.Thread(target=run_web_server).start()
     threading.Thread(target=send_alive_message).start()
     main()
+
